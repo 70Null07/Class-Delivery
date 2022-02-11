@@ -38,6 +38,14 @@ namespace ConsoleApplication
             time_delivery = _time;
         }
 
+        public Delivery(Delivery delivery)
+        {
+            this.distance = delivery.distance;
+            this.obj_name = delivery.obj_name;
+            this.car_sign = delivery.car_sign;
+            this.time_delivery = delivery.time_delivery;
+        }
+
         public void print()
         {
             Console.WriteLine($"\t\t\tDistance is {distance}, Object Name is {obj_name}, Date and Time of Delivery is {time_delivery} and Car Sign is {car_sign}.\n");
@@ -45,7 +53,6 @@ namespace ConsoleApplication
 
         public DateTime getTimeDelivery() { return time_delivery; }
     }
-
     public class Program
     {
         static void Main(string[] args)
