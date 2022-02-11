@@ -9,16 +9,6 @@ namespace ConsoleApplication
     public class Delivery
     {
         private double distance;
-        //{
-        //    get
-        //    {
-        //        return distance;
-        //    }
-        //    set
-        //    {
-        //        distance = value;
-        //    }
-        //}
         private string obj_name, car_sign;
         private DateTime time_delivery;
 
