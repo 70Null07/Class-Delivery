@@ -132,7 +132,8 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
-            List<Delivery> deliveryList = new List<Delivery>();
+             List<Delivery> deliveryList = new List<Delivery>();
+            // Delivery[] deliveryList = new Delivery[10];
             do
             {
                 try
@@ -140,8 +141,8 @@ namespace ConsoleApplication
                     string usr_inp, s;
                     int i_usr_inp;
                     Console.WriteLine("\t\t\t 1. Input Information \n\t\t\t 2. Sort by user keyword \n\t\t\t 3. Array Sort by distance, car sign or time \n\t\t\t 4. Exit");
-                    i_usr_inp = Console.Read();
-                    switch (i_usr_inp)
+                    usr_inp = Console.ReadLine();
+                    switch (int.Parse(usr_inp))
                     {
                         case 1:
                             {
@@ -174,6 +175,29 @@ namespace ConsoleApplication
                             }
                             break;
                         case 3:
+                            {
+                                deliveryList.Sort();
+                                Console.WriteLine("\t\t\t Sorted by default");
+                                foreach (Delivery delivery in deliveryList)
+                                {
+                                    delivery.print();
+                                }
+                                deliveryList.Sort(Delivery.SortByObjName);
+                                Console.WriteLine("\t\t\t Sorted by object name");
+                                foreach (Delivery delivery in deliveryList)
+                                {
+                                    delivery.print();
+                                }
+                                deliveryList.Sort(Delivery.SortByDateTime);
+                                Console.WriteLine("\t\t\t Sorted by date and time");
+                                foreach (Delivery delivery in deliveryList)
+                                {
+                                    delivery.print();
+                                }
+                                // Array.Sort(deliveryList, Delivery.SortByObjName);
+                            }
+                            break;
+                        case 4:
                             return;
                         default:
                             break;
